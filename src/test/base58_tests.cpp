@@ -36,6 +36,9 @@ BOOST_AUTO_TEST_CASE(base58_EncodeBase58)
 // Goal: test low-level base58 decoding functionality
 BOOST_AUTO_TEST_CASE(base58_DecodeBase58)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: create test data for base58_DecodeBase58" );
+#else
     Array tests = read_json("base58_encode_decode.json");
     std::vector<unsigned char> result;
 
@@ -55,6 +58,7 @@ BOOST_AUTO_TEST_CASE(base58_DecodeBase58)
     }
 
     BOOST_CHECK(!DecodeBase58("invalid", result));
+#endif // 1
 }
 
 // Visitor to check address type
@@ -101,9 +105,13 @@ public:
     }
 };
 
+
 // Goal: check that parsed keys match test payload
 BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: create test data for base58_keys_valid_parse" );
+#else
     Array tests = read_json("base58_keys_valid.json");
     std::vector<unsigned char> result;
     CBitcoinSecret secret;
@@ -159,11 +167,15 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_parse)
     }
     // Restore global state
     fTestNet = fTestNet_stored;
+#endif // 1
 }
 
 // Goal: check that generated keys match test vectors
 BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: create test data for base58_keys_valid_gen" );
+#else
     Array tests = read_json("base58_keys_valid.json");
     std::vector<unsigned char> result;
     // Save global state
@@ -225,6 +237,7 @@ BOOST_AUTO_TEST_CASE(base58_keys_valid_gen)
 
     // Restore global state
     fTestNet = fTestNet_stored;
+#endif // 1
 }
 
 // Goal: check that base58 parsing code is robust against a variety of corrupted data

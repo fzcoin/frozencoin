@@ -48,6 +48,9 @@ struct {
 // NOTE: These tests rely on CreateNewBlock doing its own self-validation!
 BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: adapt CreateNewBlock_validity" );
+#else
     CReserveKey reservekey(pwalletMain);
     CBlockTemplate *pblocktemplate;
     CTransaction tx;
@@ -199,6 +202,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     BOOST_CHECK(pblocktemplate = CreateNewBlock(reservekey));
     delete pblocktemplate;
     pindexBest->nHeight = nHeight;
+#endif // 1
 }
 
 BOOST_AUTO_TEST_CASE(sha256transform_equality)

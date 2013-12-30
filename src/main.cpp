@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2013 The Bitcoin developers
 // Copyright (c) 2013 The Sifcoin developers
+// Copyright (c) 2013 The Quarkcoin developers
 // Copyright (c) 2013 The Frozen developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -967,6 +968,22 @@ bool CWalletTx::AcceptWalletTransaction(bool fCheckInputs)
     return false;
 }
 
+int CTxIndex::GetDepthInMainChain() const
+{
+    // Read block header
+    CDiskBlockPos blockpos(pos.nFile, pos.nPos);
+    CBlock block;
+    if (!block.ReadFromDisk(blockpos))
+        return 0;
+    // Find the block in the index
+    map<uint256, CBlockIndex*>::iterator mi = mapBlockIndex.find(block.GetHash());
+    if (mi == mapBlockIndex.end())
+        return 0;
+    CBlockIndex* pindex = (*mi).second;
+    if (!pindex || !pindex->IsInMainChain())
+        return 0;
+    return 1 + nBestHeight - pindex->nHeight;
+}
 
 // Return transaction in tx, and if it was found inside a block, its hash is placed in hashBlock
 bool GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow)
@@ -1078,7 +1095,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 static const int64 nGenesisBlockRewardCoin = 1000 * COIN;
 static const int64 nBlockRewardStartCoin = 50 * COIN;
-static const int64 nBlockRewardMinimumCoin = 50 * COIN;
+static const int64 nBlockRewardMinimumCoin = 75 * (CENT/10);
 
 static const int64 nTargetTimespan = 10 * 60; // 10 minutes
 static const int64 nTargetSpacing = 30; // 30 seconds
@@ -1086,17 +1103,88 @@ static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 20 blocks
 
 int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
 {
-    if (nHeight == 1) {return nGenesisBlockRewardCoin;}
+    int64 nSubsidy = 0;
 
-    int64 nSubsidy = nBlockRewardStartCoin;
+    if (nHeight == 1) {
+        // Block 1
+        nSubsidy = nGenesisBlockRewardCoin;
+    } else if ( nHeight>1 ) {
+        nSubsidy = 0;
+        if (nHeight<=77777) {
+            /*
+             * Blocks 2 .. 77777: fix reward of 50 coins
+             */
+            nSubsidy = nBlockRewardStartCoin;
+        } else {
+            /*
+             * After block 77777 the reward drops to 25 coins, and then
+             * decreases steadily for about 1 year after the Frozen's
+             * launch until it reaches the minimum block reward of 0.075 FZ
+             *
+             * Total coins issued until block 1051200: 7715504
+             *
+             * Inflation due to the minimum reward is then afterwards per year:
+             * 365*24*60*2 blocks * 0.075 FZ = 78840.0 FZ / year
+             * This makes a relative inflation of about 1.01% pa, measured
+             * against COIN_MAX of 7777777 FZ.
+             */
+            int64 nHours = (nHeight-77778)/(60*2);
+            if ( false ) {
+            } else if (nHours < 31*24) {
+                /*
+                 * Blocks 77778 .. 167177 (should take about 31 days):
+                 * Starting at 25 coins, then dropping each 120 blocks
+                 * (about 1 hour) until reaching 10 coins at last block.
+                 */
+                nSubsidy =  25*COIN -  (15*COIN * (nHours-0))/(31*24);
+            } else if (nHours < 61*24) {
+                /*
+                 * Blocks 167178 .. 253577 (should take about 30 days):
+                 * Starting at about 10 coins, then dropping each 120 blocks
+                 * (about 1 hour) until reaching 5 coins at the last block.
+                 */
+                nSubsidy =  10*COIN -   (5*COIN * (nHours-31*24))/(30*24);
+            } else if (nHours < 183*24) {
+                /*
+                 * Blocks 253578 .. 604937 (should take about 92 days):
+                 * Starting at about 5 coins, then dropping each 120 blocks
+                 * (bout 1 hour) until reaching 1.8 coins at the last block.
+                 */
+                nSubsidy =   5*COIN - (320*CENT * (nHours-61*24))/(122*24);
+            } else if (nHours < (366*24-648+5*24)) { // 648 =~ 77777/(60*2)
+                /*
+                 * Blocks 604938 .. 1049177
+                 * Starting at about 1.8 coins, then dropping each 120 blocks
+                 * (about 1 hour) until reaching 0.075 coins at the end of 
+                 * 1 year after the launch of Frozen.
+                 */
+                nSubsidy = 180*CENT - (180*CENT * (nHours-183*24))/(183*24-648+5*24);
+            } else {
+                /*
+                 * Blocks 1049178 .. x
+                 */
+                nSubsidy = nBlockRewardMinimumCoin;
+            }
+        }
+        
+        if (nFees>0) {
+            nSubsidy += nFees;
+        }
 
-    // Minimum subsidy
-    if (nSubsidy < nBlockRewardMinimumCoin)
-    {
-        nSubsidy = nBlockRewardMinimumCoin;
+        // Just in case
+        if (!MoneyRange(nSubsidy)) {
+            nSubsidy = 0;
+        }
+    } else {
+        nSubsidy = 0;
     }
 
-    return nSubsidy + nFees;
+    return nSubsidy;
+}
+
+int64 _GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
+{
+    return GetBlockValue( nHeight, nFees, nBits );
 }
 
 //
@@ -1313,8 +1401,8 @@ void CBlockHeader::UpdateTime(const CBlockIndex* pindexPrev)
     nTime = max(pindexPrev->GetMedianTimePast()+1, GetAdjustedTime());
 
     // Updating time can change work required on testnet:
-    if (fTestNet)
-        nBits = GetNextWorkRequired(pindexPrev, this);
+//    if (fTestNet)
+//        nBits = GetNextWorkRequired(pindexPrev, this);
 }
 
 
@@ -1926,6 +2014,14 @@ bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew)
             // strMiscWarning is read by GetWarnings(), called by Qt and the JSON-RPC code to warn the user:
             strMiscWarning = _("Warning: This version is obsolete, upgrade required!");
     }
+    
+    if (!Checkpoints::IsSyncCheckpointEnforced()) // checkpoint advisory mode
+    {
+        if (pindexBest->pprev && !Checkpoints::CheckSyncCheckpoint(pindexBest->GetBlockHash(), pindexBest->pprev))
+            Checkpoints::strCheckpointWarning = _("Warning: checkpoint on different blockchain fork, contact developers to resolve the issue");
+        else
+            Checkpoints::strCheckpointWarning = "";
+    }
 
     std::string strCmd = GetArg("-blocknotify", "");
 
@@ -2195,6 +2291,11 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (!Checkpoints::CheckBlock(nHeight, hash))
             return state.DoS(100, error("AcceptBlock() : rejected by checkpoint lock-in at %d", nHeight));
 
+        // ppcoin: check that the block satisfies synchronized checkpoint
+        if (Checkpoints::IsSyncCheckpointEnforced() // checkpoint enforce mode
+           && !Checkpoints::CheckSyncCheckpoint(hash, pindexPrev))
+            return error("AcceptBlock() : rejected by synchronized checkpoint");
+
         // Reject block.nVersion=1 blocks when 95% (75% on testnet) of the network has upgraded:
 //        if (nVersion < 2)
 //        {
@@ -2244,6 +2345,9 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
             if (nBestHeight > (pnode->nStartingHeight != -1 ? pnode->nStartingHeight - 2000 : nBlockEstimate))
                 pnode->PushInventory(CInv(MSG_BLOCK, hash));
     }
+    
+    // ppcoin: check pending sync-checkpoint
+    Checkpoints::AcceptPendingSyncCheckpoint();
 
     return true;
 }
@@ -2293,6 +2397,10 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
     }
 
 
+    // ppcoin: ask for pending sync-checkpoint if any
+    if (!IsInitialBlockDownload())
+        Checkpoints::AskForPendingSyncCheckpoint(pfrom);
+ 
     // If we don't already have its previous block, shunt it off to holding area until we get it
     if (pblock->hashPrevBlock != 0 && !mapBlockIndex.count(pblock->hashPrevBlock))
     {
@@ -2336,6 +2444,12 @@ bool ProcessBlock(CValidationState &state, CNode* pfrom, CBlock* pblock, CDiskBl
     }
 
     printf("ProcessBlock: ACCEPTED\n");
+    
+    // ppcoin: if responsible for sync-checkpoint send it
+    if (pfrom && !CSyncCheckpoint::strMasterPrivKey.empty() &&
+        (int)GetArg("-checkpointdepth", -1) >= 0)
+        Checkpoints::SendSyncCheckpoint(Checkpoints::AutoSelectSyncCheckpoint());
+    
     return true;
 }
 
@@ -2810,10 +2924,21 @@ bool InitBlockIndex() {
                 return error("LoadBlockIndex() : writing genesis block to disk failed");
             if (!block.AddToBlockIndex(state, blockPos))
                 return error("LoadBlockIndex() : genesis block not accepted");
+                
+            // ppcoin: initialize synchronized checkpoint
+            printf("InitBlockIndex\n");
+            if (!Checkpoints::WriteSyncCheckpoint(hashGenesisBlock))
+                return error("LoadBlockIndex() : failed to init sync checkpoint");
+            printf("InitBlockIndex_Pass\n");
         } catch(std::runtime_error &e) {
             return error("LoadBlockIndex() : failed to initialize block database: %s", e.what());
         }
     }
+    
+    // ppcoin: if checkpoint master key changed must reset sync-checkpoint
+    printf("InitBlockIndex_CheckCheckpointPubKey\n");
+    if (!Checkpoints::CheckCheckpointPubKey())
+        return error("LoadBlockIndex() : failed to reset checkpoint master pubkey");
 
     return true;
 }
@@ -2991,6 +3116,13 @@ string GetWarnings(string strFor)
     if (!CLIENT_VERSION_IS_RELEASE)
         strStatusBar = _("This is a pre-release test build - use at your own risk - do not use for mining or merchant applications");
 
+    // Checkpoint warning
+    if (Checkpoints::strCheckpointWarning != "")
+    {
+        nPriority = 900;
+        strStatusBar = Checkpoints::strCheckpointWarning;
+    }
+
     // Misc warnings like out of disk space and clock is wrong
     if (strMiscWarning != "")
     {
@@ -3004,6 +3136,14 @@ string GetWarnings(string strFor)
         nPriority = 2000;
         strStatusBar = strRPC = _("Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.");
     }
+    
+    // ppcoin: if detected invalid checkpoint enter safe mode
+    if (Checkpoints::hashInvalidCheckpoint != 0)
+    {
+        nPriority = 3000;
+        strStatusBar = strRPC = "WARNING: Inconsistent checkpoint found! Stop enforcing checkpoints and notify developers to resolve the issue.";
+    }
+    
 
     // Alerts
     {
@@ -3292,6 +3432,11 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         printf("receive version message: version %d, blocks=%d, us=%s, them=%s, peer=%s\n", pfrom->nVersion, pfrom->nStartingHeight, addrMe.ToString().c_str(), addrFrom.ToString().c_str(), pfrom->addr.ToString().c_str());
 
         cPeerBlockCounts.input(pfrom->nStartingHeight);
+
+
+        // ppcoin: ask for pending sync-checkpoint if any
+        if (!IsInitialBlockDownload())
+            Checkpoints::AskForPendingSyncCheckpoint(pfrom);
     }
 
 
@@ -3745,6 +3890,20 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         pfrom->fRelayTxes = true;
     }
 
+    else if (strCommand == "checkpoint") // ppcoin synchronized checkpoint
+    {
+        CSyncCheckpoint checkpoint;
+        vRecv >> checkpoint;
+
+        if (checkpoint.ProcessSyncCheckpoint(pfrom))
+        {
+            // Relay
+            pfrom->hashCheckpointKnown = checkpoint.hashCheckpoint;
+            LOCK(cs_vNodes);
+            BOOST_FOREACH(CNode* pnode, vNodes)
+                checkpoint.RelayTo(pnode);
+        }
+    }
 
     else
     {

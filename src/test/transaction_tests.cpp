@@ -17,6 +17,9 @@ BOOST_AUTO_TEST_SUITE(transaction_tests)
 
 BOOST_AUTO_TEST_CASE(tx_valid)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: create test data for tx_valid" );
+#else
     // Read tests from test/data/tx_valid.json
     // Format is an array of arrays
     // Inner arrays are either [ "comment" ]
@@ -82,6 +85,7 @@ BOOST_AUTO_TEST_CASE(tx_valid)
             }
         }
     }
+#endif // 1
 }
 
 BOOST_AUTO_TEST_CASE(tx_invalid)
@@ -262,10 +266,13 @@ BOOST_AUTO_TEST_CASE(test_IsStandard)
 
     BOOST_CHECK(t.IsStandard());
 
-    t.vout[0].nValue = 5011; // dust
+    /*
+     * FZ TODO: need to reconsider the DUST concept for FZ due to small COIN!
+     */
+    t.vout[0].nValue = 51; // dust
     BOOST_CHECK(!t.IsStandard());
 
-    t.vout[0].nValue = 6011; // not dust
+    t.vout[0].nValue = 61; // not dust
     BOOST_CHECK(t.IsStandard());
 
     t.vout[0].scriptPubKey = CScript() << OP_1;

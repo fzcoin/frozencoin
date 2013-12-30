@@ -81,15 +81,19 @@ BOOST_AUTO_TEST_CASE(key_test1)
     key1C.SetSecret(secret1, true);
     key2C.SetSecret(secret2, true);
 
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: adapt key data" );
+#else
     BOOST_CHECK(addr1.Get()  == CTxDestination(key1.GetPubKey().GetID()));
     BOOST_CHECK(addr2.Get()  == CTxDestination(key2.GetPubKey().GetID()));
     BOOST_CHECK(addr1C.Get() == CTxDestination(key1C.GetPubKey().GetID()));
     BOOST_CHECK(addr2C.Get() == CTxDestination(key2C.GetPubKey().GetID()));
+#endif // 1
 
     for (int n=0; n<16; n++)
     {
         string strMsg = strprintf("Very secret message %i: 11", n);
-        uint256 hashMsg = Hash(strMsg.begin(), strMsg.end());
+        uint256 hashMsg = Hash(strMsg.begin(), strMsg.end(), "", "");
 
         // normal signatures
 

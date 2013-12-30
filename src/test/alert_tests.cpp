@@ -154,11 +154,15 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
 }
 
 
+// FZ TODO: add alert functionality (including keys)
 // This uses sh 'echo' to test the -alertnotify function, writing to a
 // /tmp file. So skip it on Windows:
 #ifndef WIN32
 BOOST_AUTO_TEST_CASE(AlertNotify)
 {
+#if 1
+    BOOST_CHECK_MESSAGE( false, "TODO: create test data for AlertNotify" );
+#else
     SetMockTime(11);
 
     boost::filesystem::path temp = GetTempPath() / "alertnotify.txt";
@@ -179,6 +183,7 @@ BOOST_AUTO_TEST_CASE(AlertNotify)
     boost::filesystem::remove(temp);
 
     SetMockTime(0);
+#endif // 1
 }
 #endif
 
