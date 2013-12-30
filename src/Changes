@@ -1,0 +1,6 @@
+
+FROZEN
+
+v1.1.0.0
+- added model to decrease block reward according to FZ specs
+- added a few block chain checkpoints
