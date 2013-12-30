@@ -79,6 +79,7 @@ Value getmininginfo(const Array& params, bool fHelp)
     obj.push_back(Pair("hashespersec",  gethashespersec(params, false)));
     obj.push_back(Pair("pooledtx",      (uint64_t)mempool.size()));
     obj.push_back(Pair("testnet",       fTestNet));
+    obj.push_back(Pair("blockreward",   FormatMoney( _GetBlockValue(nBestHeight,0,0),false)));
     return obj;
 }
 
