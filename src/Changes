@@ -4,6 +4,8 @@ FROZEN
 v1.1.0.0
 - added model to decrease block reward according to FZ specs
 - added a few block chain checkpoints
+- added "blockreward" to rpc command "getmininginfo". It shows the block
+  reward of the latest block processed (the block at "blocks")
 
 v1.0.0.0
 - First public release
