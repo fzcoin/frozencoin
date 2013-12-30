@@ -1,4 +1,4 @@
-Frozen [FZ]
+Frozen [FZ] - FAST SECURE RARE
 
 QRK hashing - based on the combination of 8 random algorithms
 
