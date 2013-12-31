@@ -3,26 +3,29 @@ TARGET = frozen-qt
 macx:TARGET = "Frozen-Qt"
 VERSION = 1.1.0.0
 INCLUDEPATH += src src/json src/qt
-QT += network
+QT += core gui network
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE BOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN __NO_SYSTEM_INCLUDES
 CONFIG += no_include_pwd
 CONFIG += thread
+#uncomment the following line for a static build:
+#CONFIG += static
 
 #uncomment the following section to enable building on windows:
 #windows:LIBS += -lshlwapi
 #LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
 #LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
 #windows:LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
-#LIBS += -lboost_system-mgw46-mt-sd-1_53 -lboost_filesystem-mgw46-mt-sd-1_53 -lboost_program_options-mgw46-mt-sd-1_53 -lboost_thread-mgw46-mt-sd-1_53
-#BOOST_LIB_SUFFIX=-mgw46-mt-sd-1_53
-#BOOST_INCLUDE_PATH=C:/deps/boost
-#BOOST_LIB_PATH=C:/deps/boost/stage/lib
-#BDB_INCLUDE_PATH=c:/deps/db/build_unix
-#BDB_LIB_PATH=c:/deps/db/build_unix
-#OPENSSL_INCLUDE_PATH=c:/deps/ssl/include
-#OPENSSL_LIB_PATH=c:/deps/ssl
-#MINIUPNPC_LIB_PATH=c:/deps/miniupnpc
-#MINIUPNPC_INCLUDE_PATH=c:/deps
+#LIBS += -lboost_system-mgw48-mt-sd-1_54 -lboost_filesystem-mgw48-mt-sd-1_54 -lboost_program_options-mgw48-mt-sd-1_54 -lboost_thread-mgw48-mt-sd-1_54
+#BOOST_LIB_SUFFIX=-mgw48-mt-s-1_54
+#BOOST_INCLUDE_PATH=F:/deps/boost_1_54_0
+#BOOST_LIB_PATH=F:/deps/boost_1_54_0/stage/lib
+#BDB_INCLUDE_PATH=F:/deps/db-4.8.30.NC/build_unix
+#BDB_LIB_PATH=F:/deps/db-4.8.30.NC/build_unix
+#OPENSSL_INCLUDE_PATH=F:/deps/openssl-1.0.1e/include
+#OPENSSL_LIB_PATH=F:/deps/openssl-1.0.1e
+#MINIUPNPC_INCLUDE_PATH=F:/deps/miniupnpc
+#MINIUPNPC_LIB_PATH=F:/deps/miniupnpc
 
 OBJECTS_DIR = build
 MOC_DIR = build
@@ -53,6 +56,7 @@ QMAKE_CXXFLAGS *= -D_FORTIFY_SOURCE=2
 # for extra security on Windows: enable ASLR and DEP via GCC linker flags
 win32:QMAKE_LFLAGS *= -Wl,--dynamicbase -Wl,--nxcompat
 # on Windows: enable GCC large address aware linker flag
+# for a static build: add " -static" at the next line
 win32:QMAKE_LFLAGS *= -Wl,--large-address-aware
 
 # use: qmake "USE_QRCODE=1"
@@ -322,6 +326,7 @@ DEFINES += BITCOIN_QT_TEST
   macx: CONFIG -= app_bundle
 }
 
+# Todo: Remove this line when switching to Qt5, as that option was removed
 CODECFORTR = UTF-8
 
 # for lrelease/lupdate
