@@ -1,6 +1,11 @@
 
 FROZEN
 
+v1.1.0.4:
+- added rpc command "getnetworkhashps" and the entry "networkhashps" to the
+  rpc command "getmininginfo", just as it is implemented in Litecoin. Note: 
+  the value is a rough estimate. Don't rely on it entirely.
+
 v1.1.0.3
 - fixed icon for frozen-qt.exe (windows binary)
 - Minor textual replacements
