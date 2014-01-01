@@ -1,7 +1,8 @@
 
 FROZEN
 
-vNew
+v1.1.0.3
+- fixed icon for frozen-qt.exe (windows binary)
 - Minor textual replacements
 
 v1.1.0.2
