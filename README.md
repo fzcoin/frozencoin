@@ -16,6 +16,6 @@ Enjoy FZ! Spread the word!
 
 Resources:
 
-    o Official FZ forum:        [a http://frozencoin.org/forum/index.php]
+    o Official FZ forum:        http://frozencoin.org/forum/index.php
     o Official Github sources:  https://github.com/fzcoin/frozencoin
 
