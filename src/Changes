@@ -1,6 +1,9 @@
 
 FROZEN
 
+v1.1.0.5:
+- fixed symbols for system tray and QRcode
+
 v1.1.0.4:
 - added rpc command "getnetworkhashps" and the entry "networkhashps" to the
   rpc command "getmininginfo", just as it is implemented in Litecoin. Note: 
