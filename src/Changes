@@ -2,6 +2,7 @@
 FROZEN
 
 v1.1.0.5:
+- fixed DNS seed nodes
 - fixed symbols for system tray and QRcode
 
 v1.1.0.4:

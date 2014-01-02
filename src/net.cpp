@@ -1192,11 +1192,16 @@ void MapPort(bool)
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetDNSSeed[][2] = {
+    {"fzcoin.mooo.com", "fzcoin.mooo.com"},
+    {"dnsseed.info.tm", "dnsseed.info.tm"},
+
+    // To be set up by Frozen@frozencoin.org:
+    {"dnsseed.frozencoin.org", "dnsseed.frozencoin.org"},
+
+    // Original entries of v1.0.0.0:
     {"frozen.no-ip.biz", "frozen.no-ip.biz"},
     {"frozen.mooo.com", "frozen.mooo.com"},
-    {"qrk.ignorelist.com", "qrk.ignorelist.com"},
-    {"qrk.redirectme.net", "qrk.redirectme.net"},
-    {"qrk.no-ip.biz", "qrk.no-ip.biz"},
+
     {NULL, NULL}
 };
 
