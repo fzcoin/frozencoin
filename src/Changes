@@ -2,6 +2,7 @@
 FROZEN
 
 v1.1.0.6 (in development):
+- fixed locale issues, using FZ demo address (thanks to Prinz @ frozencoin.org)
 - updated chinese translations (thanks to kvip @ kvipcn.cn)
 
 v1.1.0.5:
