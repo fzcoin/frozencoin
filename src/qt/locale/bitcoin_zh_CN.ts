@@ -5,12 +5,12 @@
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
         <source>About Frozen</source>
-        <translation>关于比特币</translation>
+        <translation>关于冰河币</translation>
     </message>
     <message>
         <location line="+39"/>
         <source>&lt;b&gt;Frozen&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;比特币&lt;/b&gt;版本</translation>
+        <translation>&lt;b&gt;冰河币&lt;/b&gt;版本</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -21,11 +21,11 @@ Distributed under the MIT/X11 software license, see the accompanying file COPYIN
 
 This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
         <translation>
-This is experimental software.
+该软件为测试工具.
 
-Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+请尊重麻省理工的 MIT/X11 软件许可协议, 可查阅附件或者点击 http://www.opensource.org/licenses/mit-license.php.
 
-This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</translation>
+该软件开发使用OpenSSL项目开发工具的OpenSSL包 可点击 (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
         <location filename="../aboutdialog.cpp" line="+14"/>
@@ -35,7 +35,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+0"/>
         <source>The Frozen developers</source>
-        <translation>Frozen-qt 客户端开发团队</translation>
+        <translation>冰河 客户端开发团队</translation>
     </message>
 </context>
 <context>
@@ -43,12 +43,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
         <source>Address Book</source>
-        <translation>通讯录</translation>
+        <translation>冰河币-地址薄</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Double-click to edit address or label</source>
-        <translation>双击以编辑地址或标签</translation>
+        <translation>双击后编辑地址或标签</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -68,7 +68,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
         <source>These are your Frozen addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>这是您用来收款的比特币地址。为了标记不同的资金来源，建议为每个付款人保留不同的收款地址。</translation>
+        <translation>这是您用来收款的冷冻币地址.为了标记不同的资金来源,建议为每个付款人保留不同的收款地址.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -83,7 +83,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+11"/>
         <source>Sign a message to prove you own a Frozen address</source>
-        <translation>签名消息，证明这个地址属于您。</translation>
+        <translation>签名消息,证明这个地址属于您.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -108,7 +108,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-44"/>
         <source>Verify a message to ensure it was signed with a specified Frozen address</source>
-        <translation>验证消息，确保消息是由指定的比特币地址签名过的。</translation>
+        <translation>验证消息,确保消息是由指定的冰河币地址签名过的.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -123,7 +123,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
         <source>These are your Frozen addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这是您用来付款的比特币地址。在付款前，请总是核实付款金额和收款地址。</translation>
+        <translation>这是您用来付款的冰河币地址.在付款前,请总是核实付款金额和收款地址.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -143,7 +143,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+260"/>
         <source>Export Address Book Data</source>
-        <translation>导出通讯录数据</translation>
+        <translation>导出地址薄数据</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -176,7 +176,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+36"/>
         <source>(no label)</source>
-        <translation>(没有标签)</translation>
+        <translation>(空标签)</translation>
     </message>
 </context>
 <context>
@@ -209,12 +209,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+1"/>
         <source>Encrypt wallet</source>
-        <translation>加密钱包</translation>
+        <translation>钱包加密</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>该操作需要您首先使用密码解锁钱包。</translation>
+        <translation>该操作需要您首先使用密码解锁钱包.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -224,7 +224,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+3"/>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>该操作需要您首先使用密码解密钱包。</translation>
+        <translation>该操作需要您首先使用密码解密钱包.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -249,23 +249,23 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FROZENS&lt;/b&gt;!</source>
-        <translation>警告：如果您加密了您的钱包，但是忘记了密码，你将会&lt;b&gt;丢失所有的比特币&lt;/b&gt;！</translation>
+        <translation>警告:如果您加密了您的钱包,但是忘记了密码,你将会&lt;b&gt;丢失所有的冷冻币&lt;/b&gt;！</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>您确定需要为钱包加密吗？</translation>
+        <translation>您确定需要为钱包加密吗?</translation>
     </message>
     <message>
         <location line="+15"/>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>重要提示：您以前备份的钱包文件应该替换成最新生成的加密钱包文件（重新备份）。从安全性上考虑，您以前备份的未加密的钱包文件，在您使用新的加密钱包后将无效，请重新备份。</translation>
+        <translation>重要提醒:您以前备份的钱包文件应该替换成最新生成的加密钱包文件（重新备份）.从安全性上考虑,您以前备份的未加密的钱包文件,在您使用新的加密钱包后将无效,请重新备份!</translation>
     </message>
     <message>
         <location line="+100"/>
         <location line="+24"/>
         <source>Warning: The Caps Lock key is on!</source>
-        <translation>警告：大写锁定键处于打开状态！</translation>
+        <translation>警告:大写锁定键处于打开状态！</translation>
     </message>
     <message>
         <location line="-130"/>
@@ -276,7 +276,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-56"/>
         <source>Frozen will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your frozens from being stolen by malware infecting your computer.</source>
-        <translation>将关闭软件以完成加密过程。 请您谨记：钱包加密并不是万能的，电脑中毒，您的比特币还是有可能丢失。</translation>
+        <translation>将关闭软件以完成加密过程. 请您谨记:钱包加密并不是万能的,电脑中毒,您的冰河币还是有可能丢失.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -289,13 +289,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-54"/>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>由于一个本地错误，加密钱包操作已经失败。您的钱包没有被加密。</translation>
+        <translation>由于一个本地错误,加密钱包操作已经失败.您的钱包现在没有被加密.</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+48"/>
         <source>The supplied passphrases do not match.</source>
-        <translation>密码不匹配。</translation>
+        <translation>密码不正确.</translation>
     </message>
     <message>
         <location line="-37"/>
@@ -307,17 +307,17 @@ This product includes software developed by the OpenSSL Project for use in the O
         <location line="+11"/>
         <location line="+19"/>
         <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>用于解密钱包的密码不正确。</translation>
+        <translation>用于解密钱包的密码不正确.</translation>
     </message>
     <message>
         <location line="-20"/>
         <source>Wallet decryption failed</source>
-        <translation>钱包解密失败。</translation>
+        <translation>钱包解密失败.</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Wallet passphrase was successfully changed.</source>
-        <translation>修改钱包密码成功。</translation>
+        <translation>修改钱包密码成功.</translation>
     </message>
 </context>
 <context>
@@ -375,7 +375,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+4"/>
         <source>Show information about Frozen</source>
-        <translation>显示比特币的相关信息</translation>
+        <translation>显示冰河币的相关信息</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -395,7 +395,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+6"/>
         <source>&amp;Encrypt Wallet...</source>
-        <translation>&amp;加密钱包...</translation>
+        <translation>&amp;钱包加密...</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -420,7 +420,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-347"/>
         <source>Send coins to a Frozen address</source>
-        <translation>向一个比特币地址发送比特币</translation>
+        <translation>向一个冰河币地址发送冰河币</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -440,7 +440,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+6"/>
         <source>&amp;Debug window</source>
-        <translation>&amp;调试窗口</translation>
+        <translation>&amp;控制台窗口</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -456,7 +456,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <location line="-165"/>
         <location line="+530"/>
         <source>Frozen</source>
-        <translation>比特币</translation>
+        <translation>冰河币</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -481,7 +481,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+22"/>
         <source>&amp;About Frozen</source>
-        <translation>&amp;关于比特币</translation>
+        <translation>&amp;关于冰河币</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -501,12 +501,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+7"/>
         <source>Sign messages with your Frozen addresses to prove you own them</source>
-        <translation>用比特币地址关联的私钥为消息签名，以证明您拥有这个比特币地址</translation>
+        <translation>用冰河币地址关联的私钥为消息签名,以证明您拥有这个冰河币地址</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Verify messages to ensure they were signed with specified Frozen addresses</source>
-        <translation>校验消息，确保该消息是由指定的比特币地址所有者签名的</translation>
+        <translation>校验消息，确保该消息是由指定的冰河币地址所有者签名的</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -537,12 +537,12 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+47"/>
         <source>Frozen client</source>
-        <translation>比特币客户端</translation>
+        <translation>冰河币客户端</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
         <source>%n active connection(s) to Frozen network</source>
-        <translation><numerusform>到比特币网络的连接共有%n条</numerusform></translation>
+        <translation><numerusform>到冰河币网络的连接共有%n条</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -607,7 +607,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="+70"/>
         <source>This transaction is over the size limit. You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network. Do you want to pay the fee?</source>
-        <translation>该交易的字节数超标。您可以选择支付%1的交易费给处理您的交易的网络节点，有助于比特币网络的运行。您愿意支付这笔交易费用吗？</translation>
+        <translation>该交易的字节数超标.您可以选择支付%1的交易费给处理您的交易的网络节点,有助于冰河币网络的运行.您愿意支付这笔交易费用吗?</translation>
     </message>
     <message>
         <location line="-140"/>
@@ -657,7 +657,7 @@ Address: %4
         <location line="-23"/>
         <location line="+23"/>
         <source>URI can not be parsed! This can be caused by an invalid Frozen address or malformed URI parameters.</source>
-        <translation>URI无法解析！原因可能是比特币地址不正确，或者URI参数错误。</translation>
+        <translation>URI无法解析!原因可能是冰河币地址不正确,或者URI参数错误.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -708,7 +708,7 @@ Address: %4
     <message>
         <location line="+10"/>
         <source>The address associated with this address book entry. This can only be modified for sending addresses.</source>
-        <translation>该地址与地址簿中的条目已关联，无法作为发送地址编辑。</translation>
+        <translation>该地址与地址簿中的条目已关联,无法作为发送地址编辑.</translation>
     </message>
     <message>
         <location filename="../editaddressdialog.cpp" line="+21"/>
@@ -738,7 +738,7 @@ Address: %4
     <message>
         <location line="-5"/>
         <source>The entered address &quot;%1&quot; is not a valid Frozen address.</source>
-        <translation>您输入的 &quot;%1&quot; 不是合法的比特币地址.</translation>
+        <translation>您输入的 &quot;%1&quot; 不是合法的冰河币地址.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -757,7 +757,7 @@ Address: %4
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
         <source>Frozen-Qt</source>
-        <translation>Frozen-Qt</translation>
+        <translation>冰河币-钱包</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -782,7 +782,7 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
-        <translation>设置语言, 例如 &quot;de_DE&quot; (缺省: 系统语言)</translation>
+        <translation>设置语言, 例如 &quot;de_DE&quot; (默认: 兲朝)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -793,7 +793,7 @@ Address: %4
     <message>
         <location line="+1"/>
         <source>Show splash screen on startup (default: 1)</source>
-        <translation>启动时显示版权页 (缺省: 1)</translation>
+        <translation>启动时显示版权页 (默认: 1)</translation>
     </message>
 </context>
 <context>
@@ -821,7 +821,7 @@ Address: %4
     <message>
         <location line="+31"/>
         <source>Automatically start Frozen after logging in to the system.</source>
-        <translation>登录系统后自动开启比特币客户端</translation>
+        <translation>登录系统后自动开启冰河币客户端</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -831,12 +831,12 @@ Address: %4
     <message>
         <location line="+35"/>
         <source>Reset all client options to default.</source>
-        <translation>恢复客户端的缺省设置</translation>
+        <translation>恢复客户端的默认设置</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>&amp;Reset Options</source>
-        <translation>恢复缺省设置</translation>
+        <translation>恢复默认设置</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -846,7 +846,7 @@ Address: %4
     <message>
         <location line="+6"/>
         <source>Automatically open the Frozen client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自动在路由器中打开比特币端口。只有当您的路由器开启 UPnP 选项时此功能才有效。</translation>
+        <translation>自动在路由器中打开冰河币端口.只有当您的路由器开启 UPnP 选项时此功能才有效.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -856,7 +856,7 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Connect to the Frozen network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>通过代理服务器连接比特币网络(例如：通过Tor连接)</translation>
+        <translation>通过代理服务器连接冰河币网络(例如：通过Tor连接)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -911,7 +911,7 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
-        <translation>当窗口关闭时程序最小化而不是退出。当使用该选项时，程序只能通过在菜单中选择退出来关闭</translation>
+        <translation>当窗口关闭时程序最小化而不是退出.当使用该选项时,程序只能通过在菜单中选择退出来关闭</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -936,22 +936,22 @@ Address: %4
     <message>
         <location line="+11"/>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>&amp;比特币金额单位:</translation>
+        <translation>&amp;冰河币金额单位:</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择比特币单位。</translation>
+        <translation>选择冰河币单位。</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Whether to show Frozen addresses in the transaction list or not.</source>
-        <translation>是否需要在交易清单中显示比特币地址。</translation>
+        <translation>是否需要在交易清单中显示冰河币地址。</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>&amp;Display addresses in transaction list</source>
-        <translation>在交易清单中&amp;显示比特币地址</translation>
+        <translation>在交易清单中&amp;显示冰河币地址</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -971,12 +971,12 @@ Address: %4
     <message>
         <location filename="../optionsdialog.cpp" line="+53"/>
         <source>default</source>
-        <translation>缺省</translation>
+        <translation>默认</translation>
     </message>
     <message>
         <location line="+130"/>
         <source>Confirm options reset</source>
-        <translation>确认恢复缺省设置</translation>
+        <translation>确认恢复默认设置</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -986,7 +986,7 @@ Address: %4
     <message>
         <location line="+0"/>
         <source>Do you want to proceed?</source>
-        <translation>您希望继续吗？</translation>
+        <translation>您希望继续吗?</translation>
     </message>
     <message>
         <location line="+42"/>
@@ -998,12 +998,12 @@ Address: %4
         <location line="-9"/>
         <location line="+9"/>
         <source>This setting will take effect after restarting Frozen.</source>
-        <translation>需要重启客户端软件才能生效。</translation>
+        <translation>需要重启客户端软件才能生效.</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>The supplied proxy address is invalid.</source>
-        <translation>提供的代理服务器地址无效。</translation>
+        <translation>提供的代理服务器地址无效.</translation>
     </message>
 </context>
 <context>
@@ -1017,27 +1017,27 @@ Address: %4
         <location line="+50"/>
         <location line="+166"/>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Frozen network after a connection is established, but this process has not completed yet.</source>
-        <translation>现在显示的消息可能是过期的. 在连接上比特币网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成.</translation>
+        <translation>现在显示的消息可能是过期的. 在连接上冰河币网络节点后,您的钱包将自动与网络同步,但是这个过程还没有完成.</translation>
     </message>
     <message>
         <location line="-124"/>
         <source>Balance:</source>
-        <translation>余额：</translation>
+        <translation>余额:</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Unconfirmed:</source>
-        <translation>未确认：</translation>
+        <translation>未确认:</translation>
     </message>
     <message>
         <location line="-78"/>
         <source>Wallet</source>
-        <translation>钱包</translation>
+        <translation>冰河币-钱包</translation>
     </message>
     <message>
         <location line="+107"/>
         <source>Immature:</source>
-        <translation>未成熟的：</translation>
+        <translation>未成熟的:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1047,7 +1047,7 @@ Address: %4
     <message>
         <location line="+46"/>
         <source>&lt;b&gt;Recent transactions&lt;/b&gt;</source>
-        <translation>&lt;b&gt;最近交易记录&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;近期冰河币交易记录&lt;/b&gt;</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -1071,7 +1071,7 @@ Address: %4
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
         <source>Cannot start frozen: click-to-pay handler</source>
-        <translation>暂时无法启动比特币：点击支付功能</translation>
+        <translation>暂时无法启动冰河币:点击支付功能</translation>
     </message>
 </context>
 <context>
@@ -1089,17 +1089,17 @@ Address: %4
     <message>
         <location line="+56"/>
         <source>Amount:</source>
-        <translation>金额：</translation>
+        <translation>金额:</translation>
     </message>
     <message>
         <location line="-44"/>
         <source>Label:</source>
-        <translation>标签：</translation>
+        <translation>标签:</translation>
     </message>
     <message>
         <location line="+19"/>
         <source>Message:</source>
-        <translation>消息：</translation>
+        <translation>消息:</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -1114,12 +1114,12 @@ Address: %4
     <message>
         <location line="+40"/>
         <source>The entered amount is invalid, please check.</source>
-        <translation>输入的金额非法，请检查。</translation>
+        <translation>输入的金额非法,请检查.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
-        <translation>URI 太长, 请试着精简标签/消息的内容.</translation>
+        <translation>URI 太长,请试着精简标签/消息的内容.</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1186,7 +1186,7 @@ Address: %4
     <message>
         <location line="+23"/>
         <source>On testnet</source>
-        <translation>当前为比特币测试网络</translation>
+        <translation>当前为冰河币测试网络</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -1241,12 +1241,12 @@ Address: %4
     <message>
         <location line="-104"/>
         <source>Frozen - Debug window</source>
-        <translation>比特币 - 调试窗口</translation>
+        <translation>冰河币 - 调试窗口</translation>
     </message>
     <message>
         <location line="+25"/>
         <source>Frozen Core</source>
-        <translation>比特币核心</translation>
+        <translation>冰河币核心</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1256,7 +1256,7 @@ Address: %4
     <message>
         <location line="+7"/>
         <source>Open the Frozen debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>打开当前目录中的调试日志文件。日志文件大的话可能要等上几秒钟。</translation>
+        <translation>打开当前目录中的调试日志文件.日志文件大的话可能要等上几秒钟.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1266,7 +1266,7 @@ Address: %4
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
         <source>Welcome to the Frozen RPC console.</source>
-        <translation>欢迎来到 RPC 控制台.</translation>
+        <translation>欢迎来到 RPC 控制台.中国冰河币Q群: 264134565 欢迎加入!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1326,7 +1326,7 @@ Address: %4
     <message>
         <location line="+31"/>
         <source>Confirm the send action</source>
-        <translation>确认并发送货币</translation>
+        <translation>确认并发送冰河币</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1356,7 +1356,7 @@ Address: %4
     <message>
         <location line="+23"/>
         <source>The recipient address is not valid, please recheck.</source>
-        <translation>收款人地址不合法，请检查。</translation>
+        <translation>收款人地址不合法,请检查.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1366,7 +1366,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>The amount exceeds your balance.</source>
-        <translation>金额超出您的账上余额。</translation>
+        <translation>金额超出您的账上余额.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1386,7 +1386,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Error: The transaction was rejected. This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>错误: 交易被拒绝. 如果您使用的是备份钱包，可能存在两个钱包不同步的情况，另一个钱包中的比特币已经被使用，但本地的这个钱包尚没有记录。</translation>
+        <translation>错误: 交易被拒绝. 如果您使用的是备份钱包,可能存在两个钱包不同步的情况,另一个钱包中的冰河币已经被使用,但本地的这个钱包尚没有记录.</translation>
     </message>
 </context>
 <context>
@@ -1408,8 +1408,8 @@ Address: %4
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>付款给这个地址  (例如 Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address to send the payment to (e.g. FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</source>
+        <translation>付款给这个地址  (例如 FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -1449,8 +1449,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>请输入比特币地址 (例如: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>Enter a Frozen address (e.g. FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</source>
+        <translation>请输入冰河币地址 (例如: FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</translation>
     </message>
 </context>
 <context>
@@ -1468,12 +1468,12 @@ Address: %4
     <message>
         <location line="+6"/>
         <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>您可以用你的地址对消息进行签名，以证明您是该地址的所有人。注意不要对模棱两可的消息签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
+        <translation>您可以用你的地址对消息进行签名,以证明您是该地址的所有人.注意不要对模棱两可的消息签名,以免遭受钓鱼式攻击.请确保消息内容准确的表达了您的真实意愿.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>用于签名消息的地址(例如: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address to sign the message with (e.g. FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</source>
+        <translation>用于签名消息的地址(例如: FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1515,7 +1515,7 @@ Address: %4
     <message>
         <location line="+21"/>
         <source>Sign the message to prove you own this Frozen address</source>
-        <translation>签名消息，证明这个地址属于您。</translation>
+        <translation>签名消息m证明这个地址属于您,</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1545,13 +1545,13 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>用于签名消息的地址(例如: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address the message was signed with (e.g. FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</source>
+        <translation>用于签名消息的地址(例如: FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</translation>
     </message>
     <message>
         <location line="+40"/>
         <source>Verify the message to ensure it was signed with the specified Frozen address</source>
-        <translation>验证消息，确保消息是由指定的比特币地址签名过的。</translation>
+        <translation>验证消息，确保消息是由指定的冰河币地址签名过的。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1566,8 +1566,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>请输入比特币地址 (例如: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>Enter a Frozen address (e.g. FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</source>
+        <translation>请输入冰河币地址 (例如: FHKEju5oS8Q8PmNjifjoDEvrT1Hq6wypbB)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1577,7 +1577,7 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Enter Frozen signature</source>
-        <translation>输入比特币签名</translation>
+        <translation>输入冰河币签名</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1591,59 +1591,59 @@ Address: %4
         <location line="+73"/>
         <location line="+8"/>
         <source>Please check the address and try again.</source>
-        <translation>请检查地址后重试。</translation>
+        <translation>请检查地址后重试.</translation>
     </message>
     <message>
         <location line="-81"/>
         <location line="+81"/>
         <source>The entered address does not refer to a key.</source>
-        <translation>输入的地址没有关联的公私钥对。</translation>
+        <translation>输入的地址没有关联的公私钥对.</translation>
     </message>
     <message>
         <location line="-73"/>
         <source>Wallet unlock was cancelled.</source>
-        <translation>钱包解锁动作取消。</translation>
+        <translation>钱包解锁动作取消.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Private key for the entered address is not available.</source>
-        <translation>找不到输入地址关联的私钥。</translation>
+        <translation>找不到输入地址关联的私钥.</translation>
     </message>
     <message>
         <location line="+12"/>
         <source>Message signing failed.</source>
-        <translation>消息签名失败。</translation>
+        <translation>消息签名失败.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Message signed.</source>
-        <translation>消息已签名。</translation>
+        <translation>消息已签名.</translation>
     </message>
     <message>
         <location line="+59"/>
         <source>The signature could not be decoded.</source>
-        <translation>签名无法解码。</translation>
+        <translation>签名无法解码.</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+13"/>
         <source>Please check the signature and try again.</source>
-        <translation>请检查签名后重试。</translation>
+        <translation>请检查签名后重试.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>The signature did not match the message digest.</source>
-        <translation>签名与消息摘要不匹配。</translation>
+        <translation>签名与消息摘要不匹配.</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Message verification failed.</source>
-        <translation>消息验证失败。</translation>
+        <translation>消息验证失败.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Message verified.</source>
-        <translation>消息验证成功。</translation>
+        <translation>消息验证成功.</translation>
     </message>
 </context>
 <context>
@@ -1651,7 +1651,7 @@ Address: %4
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
         <source>The Frozen developers</source>
-        <translation>Frozen-qt 客户端开发团队</translation>
+        <translation>冰河 客户端开发团队</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1785,7 +1785,7 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Generated coins must mature 240 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to &quot;not accepted&quot; and it won&apos;t be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>新挖出的比特币必须等确240个确认才能使用。您生产出的数据块，将被广播到全网并添加到数据块链。如果入链失败，状态将变为“未被接受”，意味着您的数据块竞争失败，挖出的比特币将不能使用。当某个节点先于你几秒生产出新的数据块，这种情况会偶尔发生。</translation>
+        <translation>新挖出的冰河币必须等确240个确认才能使用。您生产出的数据块，将被广播到全网并添加到数据块链。如果入链失败，状态将变为“未被接受”，意味着您的数据块竞争失败，挖出的冰河币将不能使用。当某个节点先于你几秒生产出新的数据块，这种情况会偶尔发生。</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1871,7 +1871,7 @@ Address: %4
     <message numerus="yes">
         <location line="+57"/>
         <source>Open for %n more block(s)</source>
-        <translation><numerusform>Open for %n more block</numerusform></translation>
+        <translation><numerusform>打开 for %n 更多区块</numerusform></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1901,7 +1901,7 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>This block was not received by any other nodes and will probably not be accepted!</source>
-        <translation>此数据块未被其他节点接收，并可能不被接受！</translation>
+        <translation>此数据块未被其他节点接收,并可能不被接受!</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1941,12 +1941,12 @@ Address: %4
     <message>
         <location line="+199"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
-        <translation>交易状态。 鼠标移到此区域上可显示确认消息项的数目。</translation>
+        <translation>交易状态. 鼠标移到此区域上可显示确认消息项的数目.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Date and time that the transaction was received.</source>
-        <translation>接收比特币的时间</translation>
+        <translation>接收冰河币的时间</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2138,7 +2138,7 @@ Address: %4
     <message>
         <location filename="../walletmodel.cpp" line="+193"/>
         <source>Send Coins</source>
-        <translation>发送比特币</translation>
+        <translation>发送冰河币</translation>
     </message>
 </context>
 <context>
@@ -2189,7 +2189,7 @@ Address: %4
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
         <source>Frozen version</source>
-        <translation>比特币版本</translation>
+        <translation>冰河币版本</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2241,17 +2241,17 @@ Address: %4
     <message>
         <location line="-9"/>
         <source>Set database cache size in megabytes (default: 25)</source>
-        <translation>设置数据库缓冲区大小 (缺省: 25MB)</translation>
+        <translation>设置数据库缓冲区大小 (默认: 25MB)</translation>
     </message>
     <message>
         <location line="-28"/>
         <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>监听端口连接 &lt;port&gt; (缺省: 8333 or testnet: 18333)</translation>
+        <translation>监听端口连接 &lt;port&gt; (默认: 8333 or testnet: 18333)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
-        <translation>最大连接数 &lt;n&gt;  (缺省: 125)</translation>
+        <translation>最大连接数 &lt;n&gt;  (默认: 125)</translation>
     </message>
     <message>
         <location line="-48"/>
@@ -2266,12 +2266,12 @@ Address: %4
     <message>
         <location line="+3"/>
         <source>Threshold for disconnecting misbehaving peers (default: 100)</source>
-        <translation>Threshold for disconnecting misbehaving peers (缺省: 100)</translation>
+        <translation>隔离 for 有恶意行为的 peers 节点 (默认: 100)</translation>
     </message>
     <message>
         <location line="-134"/>
         <source>Number of seconds to keep misbehaving peers from reconnecting (default: 86400)</source>
-        <translation>Number of seconds to keep misbehaving peers from reconnecting (缺省: 86400)</translation>
+        <translation>让有恶意行为的 peers 节点重新连接的时间(秒) (默认: 86400)</translation>
     </message>
     <message>
         <location line="-29"/>
@@ -2281,7 +2281,7 @@ Address: %4
     <message>
         <location line="+27"/>
         <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 8332 or testnet: 18332)</source>
-        <translation>JSON-RPC连接监听端口&lt;port&gt; (缺省：8332　testnet：18332)</translation>
+        <translation>JSON-RPC连接监听端口&lt;port&gt; (默认：8332　testnet：18332)</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2305,7 +2305,7 @@ Address: %4
     <message>
         <location line="-112"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation>接受来自外部的连接 (缺省: 如果不带 -proxy or -connect 参数设置为1)</translation>
+        <translation>接受来自外部的连接 (默认: 如果不带 -proxy or -connect 参数设置为1)</translation>
     </message>
     <message>
         <location line="-80"/>
@@ -2350,7 +2350,7 @@ rpcpassword=%s
     <message>
         <location line="+3"/>
         <source>Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.</source>
-        <translation>错误：该交易被拒绝！发生这种错误的原因可能是：钱包中的比特币已经被用掉，有可能您复制了wallet.dat钱包文件，然后用复制的钱包文件支付了比特币，但是这个钱包文件中没有记录。</translation>
+        <translation>错误：该交易被拒绝！发生这种错误的原因可能是：钱包中的冰河币已经被用掉，有可能您复制了wallet.dat钱包文件，然后用复制的钱包文件支付了冰河币，但是这个钱包文件中没有记录。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2370,7 +2370,7 @@ rpcpassword=%s
     <message>
         <location line="+11"/>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)</source>
-        <translation>Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)</translation>
+        <translation>设置最高优先级/最低的支付字节数 (默认: 27000)</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2390,7 +2390,7 @@ rpcpassword=%s
     <message>
         <location line="+3"/>
         <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Frozen will not work properly.</source>
-        <translation>警告：请检查电脑的日期时间设置是否正确！时间错误可能会导致比特币客户端运行异常。</translation>
+        <translation>警告：请检查电脑的日期时间设置是否正确！时间错误可能会导致冰河币客户端运行异常。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2425,7 +2425,7 @@ rpcpassword=%s
     <message>
         <location line="+1"/>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
-        <translation>发现自己的IP地址(缺省:不带 -externalip 参数监听时设置为1)</translation>
+        <translation>发现自己的IP地址(默认:不带 -externalip 参数监听时设置为1)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2525,7 +2525,7 @@ rpcpassword=%s
     <message>
         <location line="+2"/>
         <source>Find peers using DNS lookup (default: 1 unless -connect)</source>
-        <translation>通过DNS查找节点(缺省：1 除非使用 -connect 选项)</translation>
+        <translation>通过DNS查找节点(默认：1 除非使用 -connect 选项)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2535,7 +2535,7 @@ rpcpassword=%s
     <message>
         <location line="+2"/>
         <source>How many blocks to check at startup (default: 288, 0 = all)</source>
-        <translation>启动时检测多少个数据块(缺省：288，0=所有)</translation>
+        <translation>启动时检测多少个数据块(默认：288，0=所有)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2600,17 +2600,17 @@ rpcpassword=%s
     <message>
         <location line="+8"/>
         <source>Maintain a full transaction index (default: 0)</source>
-        <translation>维护一份完整的交易索引(缺省：0)</translation>
+        <translation>维护一份完整的交易索引(默认：0)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: 5000)</source>
-        <translation>每个连接的最大接收缓存，&lt;n&gt;*1000 字节(缺省：5000)</translation>
+        <translation>每个连接的最大接收缓存，&lt;n&gt;*1000 字节(默认：5000)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: 1000)</source>
-        <translation>每个连接的最大发送缓存，&lt;n&gt;*1000 字节(缺省：1000)</translation>
+        <translation>每个连接的最大发送缓存，&lt;n&gt;*1000 字节(默认：1000)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2645,7 +2645,7 @@ rpcpassword=%s
     <message>
         <location line="+1"/>
         <source>Select the version of socks proxy to use (4-5, default: 5)</source>
-        <translation>请选择Socks代理服务器版本 (4 或 5, 缺省: 5)</translation>
+        <translation>请选择Socks代理服务器版本 (4 或 5, 默认: 5)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2660,17 +2660,17 @@ rpcpassword=%s
     <message>
         <location line="+5"/>
         <source>Set maximum block size in bytes (default: 250000)</source>
-        <translation>设置最大数据块大小(缺省：250000)</translation>
+        <translation>设置最大数据块大小(默认：250000)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Set minimum block size in bytes (default: 0)</source>
-        <translation>设置最小数据块大小(缺省:0)</translation>
+        <translation>设置最小数据块大小(默认:0)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
-        <translation>客户端启动时压缩debug.log文件(缺省：no-debug模式时为1)</translation>
+        <translation>客户端启动时压缩debug.log文件(默认：no-debug模式时为1)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2680,7 +2680,7 @@ rpcpassword=%s
     <message>
         <location line="+2"/>
         <source>Specify connection timeout in milliseconds (default: 5000)</source>
-        <translation>设置连接超时时间(缺省：5000毫秒)</translation>
+        <translation>设置连接超时时间(默认：5000毫秒)</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2705,17 +2705,17 @@ rpcpassword=%s
     <message>
         <location line="+7"/>
         <source>Use UPnP to map the listening port (default: 0)</source>
-        <translation>使用UPnp映射监听端口(缺省: 0)</translation>
+        <translation>使用UPnp映射监听端口(默认: 0)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation>使用UPnp映射监听端口(缺省: 监听状态设为1)</translation>
+        <translation>使用UPnp映射监听端口(默认: 监听状态设为1)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Use proxy to reach tor hidden services (default: same as -proxy)</source>
-        <translation>使用代理服务器访问隐藏服务(缺省：同 -proxy)</translation>
+        <translation>使用代理服务器访问隐藏服务(默认：同 -proxy)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2758,7 +2758,7 @@ rpcpassword=%s
     <message>
         <location line="+76"/>
         <source>Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</source>
-        <translation>向IP地址为 &lt;ip&gt; 的节点发送指令 (缺省: 127.0.0.1)
+        <translation>向IP地址为 &lt;ip&gt; 的节点发送指令 (默认: 127.0.0.1)
 </translation>
     </message>
     <message>
@@ -2774,7 +2774,7 @@ rpcpassword=%s
     <message>
         <location line="-21"/>
         <source>Set key pool size to &lt;n&gt; (default: 100)</source>
-        <translation>设置密钥池大小为 &lt;n&gt; (缺省: 100)
+        <translation>设置密钥池大小为 &lt;n&gt; (默认: 100)
 </translation>
     </message>
     <message>
@@ -2845,7 +2845,7 @@ rpcpassword=%s
     <message>
         <location line="+93"/>
         <source>Wallet needed to be rewritten: restart Frozen to complete</source>
-        <translation>钱包文件需要重写：请退出并重新启动Frozen客户端</translation>
+        <translation>钱包文件需要重写：请退出并重新启动冰河客户端</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2905,7 +2905,7 @@ rpcpassword=%s
     <message>
         <location line="-25"/>
         <source>Unable to bind to %s on this computer. Frozen is probably already running.</source>
-        <translation>无法在本机绑定 %s 端口 . 比特币客户端软件可能已经在运行.</translation>
+        <translation>无法在本机绑定 %s 端口 . 冰河币客户端软件可能已经在运行.</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2925,7 +2925,7 @@ rpcpassword=%s
     <message>
         <location line="+3"/>
         <source>Cannot write default address</source>
-        <translation>无法写入缺省地址</translation>
+        <translation>无法写入默认地址</translation>
     </message>
     <message>
         <location line="+64"/>
