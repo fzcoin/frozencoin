@@ -1403,7 +1403,7 @@ Address: %4
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
+        <source>The address to send the payment to (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1444,7 +1444,7 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
+        <source>Enter a Frozen address (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1467,7 +1467,7 @@ Address: %4
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
+        <source>The address to sign the message with (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1540,7 +1540,7 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
+        <source>The address the message was signed with (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1561,7 +1561,7 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
+        <source>Enter a Frozen address (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
         <translation type="unfinished"/>
     </message>
     <message>

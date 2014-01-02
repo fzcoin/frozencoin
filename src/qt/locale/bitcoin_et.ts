@@ -1406,8 +1406,8 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>The address to send the payment to (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>Tehingu saaja aadress (nt: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address to send the payment to (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
+        <translation>Tehingu saaja aadress (nt: FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -1447,8 +1447,8 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>Sisesta Frozeni aadress (nt: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>Enter a Frozen address (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
+        <translation>Sisesta Frozeni aadress (nt: FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</translation>
     </message>
 </context>
 <context>
@@ -1470,8 +1470,8 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>Sõnumi signeerimise aadress (nt: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address to sign the message with (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
+        <translation>Sõnumi signeerimise aadress (nt: FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1543,8 +1543,8 @@ Aadress: %4⏎</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>Aadress, millega sõnum allkirjastati (nt: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>The address the message was signed with (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
+        <translation>Aadress, millega sõnum allkirjastati (nt: FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -1564,8 +1564,8 @@ Aadress: %4⏎</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Frozen address (e.g. Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</source>
-        <translation>Sisesta Frozeni aadress (nt: Qi1NooNjQySQLDJ643HWfZZ7UN2EmLEvix)</translation>
+        <source>Enter a Frozen address (e.g. FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</source>
+        <translation>Sisesta Frozeni aadress (nt: FRDNY9x5CospzTK4ZDyZ84Kyyvyv3N12Z9)</translation>
     </message>
     <message>
         <location line="-2"/>
