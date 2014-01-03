@@ -322,7 +322,7 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Open the Frozen debug log file from the current data directory. This can take a few seconds for large log files.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>Open the Frozen debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -348,7 +348,7 @@
        <item row="17" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show the Frozen-Qt help message to get a list with possible Frozen command-line options.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>Show the Frozen-Qt help message to get a list with possible Frozen command-line options.</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>
