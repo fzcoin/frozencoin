@@ -1101,6 +1101,16 @@ static const int64 nTargetTimespan = 10 * 60; // 10 minutes
 static const int64 nTargetSpacing = 30; // 30 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 20 blocks
 
+/*
+ * GetBlockValue() is crucial for the coin design, you should do *no* changes
+ * here. Be careful even with the parenthesis! Don't "simplify" them, because
+ * this will cause differing results and a broken block chain!
+ *
+ * Tests in test/getblockvalue_tests.cpp. After "make check" you can also run
+ * individual tests with: ./test_frozen -t GetBlockValue_tests
+ *
+ * Last block with reward: 1913379. Blocks thereafter get reward: 0
+ */
 int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
 {
     int64 nSubsidy = 0;
@@ -1155,15 +1165,31 @@ int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
                 /*
                  * Blocks 604938 .. 1049177
                  * Starting at about 1.8 coins, then dropping each 120 blocks
-                 * (about 1 hour) until reaching 0.075 coins at the end of 
+                 * (about 1 hour) until reaching 0.075 FZ at the end of 
                  * 1 year after the launch of Frozen.
                  */
                 nSubsidy = 180*CENT - (180*CENT * (nHours-183*24))/(183*24-648+5*24);
-            } else {
+            } else if ( (nHours>=(366*24-648+5*24)) && (nHeight<=1913378) ) {
                 /*
-                 * Blocks 1049178 .. x
+                 * Blocks 1049178 .. 1913378 yield 0.075 FZ per block
                  */
                 nSubsidy = nBlockRewardMinimumCoin;
+            } else if (nHeight == 1913379) {
+                /*
+                 * Block 1913379 is the last block getting a subsidy. 
+                 * The reward of the block is 0.0788 FZ (0.0750 + 0.0038).
+                 *
+                 * The last block with reward will be reached at about 665
+                 * days after launch of the coin. The rewards of all blocks
+                 * sum up to a total of 7,777,777.00000 FZ
+                 */
+                nSubsidy = 788 * (CENT/100);
+            } else {
+                /*
+                 * From block 1913380 on there is no more subsidy. Miners will get
+                 * their reward exclusively from the transaction fees.
+                 */
+                nSubsidy = 0;
             }
         }
         

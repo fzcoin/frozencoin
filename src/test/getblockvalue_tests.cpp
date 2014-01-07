@@ -42,8 +42,16 @@ BOOST_AUTO_TEST_CASE(GetBlockValue_limits)
 
     // Segment 6:
     BOOST_CHECK_EQUAL(_GetBlockValue(1049178,0,0),    7500);
-    BOOST_CHECK_EQUAL(_GetBlockValue(2000000,0,0),    7500);
-    BOOST_CHECK_EQUAL(_GetBlockValue(10000000,0,0),   7500);
+    BOOST_CHECK_EQUAL(_GetBlockValue(1910000,0,0),    7500);
+    BOOST_CHECK_EQUAL(_GetBlockValue(1913378,0,0),    7500);
+    BOOST_CHECK_EQUAL(_GetBlockValue(1913379,0,0),    7880);
+
+    // Segment 7:
+    BOOST_CHECK_EQUAL(_GetBlockValue(1913380,0,0),       0);
+    BOOST_CHECK_EQUAL(_GetBlockValue(5000000,0,0),       0);
+    BOOST_CHECK_EQUAL(_GetBlockValue(10000000,0,0),      0);
+    BOOST_CHECK_EQUAL(_GetBlockValue(90000000,0,0),      0);
+    BOOST_CHECK_EQUAL(_GetBlockValue(500000001,0,0),     0);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
