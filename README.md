@@ -10,9 +10,8 @@ is from then on reduced each 120 blocks until it reaches at block 1,049,178 the
 minimum reward of 0.0750 FZ. The minimum block reward will last for about one
 more year until block 1,913,378. The last block with reward is block 1,913,789,
 it gets a reward of 0.0788 FZ. With the last block the amount of FZ issued in
-total is 7,777,777.00000 FZ (a bit less than 8 million FZ).
-
-From block 1,913,380 on the block subsidy is zero.
+total is 7,777,777.00000 FZ (a bit less than 8 million FZ). Starting with block
+1,913,380 the block subsidy is zero.
 
 Enjoy FZ! Spread the word!
 
