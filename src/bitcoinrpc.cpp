@@ -365,6 +365,7 @@ static const CRPCCommand vRPCCommands[] =
     { "getpeerinfo",            &getpeerinfo,            true,      false },
     { "addnode",                &addnode,                true,      true },
     { "getaddednodeinfo",       &getaddednodeinfo,       true,      true },
+    { "getblockreward",         &getblockreward,         true,      false },
     { "getcoinsupply",          &getcoinsupply,          true,      false },
     { "getdifficulty",          &getdifficulty,          true,      false },
     { "getnetworkhashps",       &getnetworkhashps,       true,      false },
@@ -1359,6 +1360,7 @@ Array RPCConvertValues(const std::string &strMethod, const std::vector<std::stri
     if (strMethod == "enforcecheckpoint"      && n > 0) ConvertTo<bool>(params[0]);
     if (strMethod == "getnetworkhashps"       && n > 0) ConvertTo<boost::int64_t>(params[0]);
     if (strMethod == "getnetworkhashps"       && n > 1) ConvertTo<boost::int64_t>(params[1]);
+    if (strMethod == "getblockreward"         && n > 0) ConvertTo<boost::int64_t>(params[0]);
     if (strMethod == "getcoinsupply"          && n > 0) ConvertTo<boost::int64_t>(params[0]);
 
     return params;

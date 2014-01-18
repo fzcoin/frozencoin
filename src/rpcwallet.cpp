@@ -1602,6 +1602,23 @@ Value makekeypair(const Array& params, bool fHelp)
     return result;
 }
 
+Value getblockreward(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+            "getblockreward [height]\n"
+            "Returns the coin reward for the current block or block #[height].\n");
+
+    int height = nBestHeight;
+    if (params.size() > 0) {
+        height = (int) params[0].get_int();
+    }
+
+    int64 blockValue =  _GetBlockValue(height,0,0);
+
+    return ValueFromAmount(blockValue);
+}
+
 Value getcoinsupply(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() > 1)
