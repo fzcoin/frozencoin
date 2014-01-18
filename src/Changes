@@ -8,6 +8,7 @@ v1.1.0.8
   After fix: block 1,691,867 is the last last block allowing a reward, it
   is scheduled to be mined about 560 days after block 1.
 - fixed the parametrized version of "getnetworkhashps"
+- added checkpoint for block 77778 (first blick with reduced reward)
 
 v1.1.0.7
 - smaller adjustments for OSX
