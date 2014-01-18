@@ -1094,8 +1094,6 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 }
 
 static const int64 nGenesisBlockRewardCoin = 1000 * COIN;
-static const int64 nBlockRewardStartCoin = 50 * COIN;
-static const int64 nBlockRewardMinimumCoin = 75 * (CENT/10);
 
 static const int64 nTargetTimespan = 10 * 60; // 10 minutes
 static const int64 nTargetSpacing = 30; // 30 seconds
@@ -1109,10 +1107,22 @@ static const int64 nInterval = nTargetTimespan / nTargetSpacing; // 20 blocks
  * Tests in test/getblockvalue_tests.cpp. After "make check" you can also run
  * individual tests with: ./test_frozen -t GetBlockValue_tests
  *
- * Last block with reward: 1913379. Blocks thereafter get reward: 0
+ * Last block with reward: 1691867. Blocks thereafter get reward: 0
  */
 int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
 {
+    int64 rewards[] = {
+        nGenesisBlockRewardCoin,
+        50 * COIN,
+        25 * COIN,
+        10 * COIN,
+        5 * COIN,
+        180 * CENT,
+        75 * (CENT/10),
+        10900,
+        0
+    };
+
     int64 nSubsidy = 0;
 
     if (nHeight == 1) {
@@ -1124,7 +1134,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
             /*
              * Blocks 2 .. 77777: fix reward of 50 coins
              */
-            nSubsidy = nBlockRewardStartCoin;
+            nSubsidy = rewards[1];
         } else {
             /*
              * After block 77777 the reward drops to 25 coins, and then
@@ -1138,58 +1148,70 @@ int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
              * This makes a relative inflation of about 1.01% pa, measured
              * against COIN_MAX of 7777777 FZ.
              */
+
+            int64 days[] = {
+                0,
+                31*24,
+                61*24,
+                183*24,
+                366*24 - 648 + 5*24,
+                0,
+                0,
+                0,
+            };
+
             int64 nHours = (nHeight-77778)/(60*2);
             if ( false ) {
-            } else if (nHours < 31*24) {
+            } else if (nHours < days[1]) {
                 /*
-                 * Blocks 77778 .. 167177 (should take about 31 days):
+                 * Blocks 77778 .. 167057 (should take about 31 days):
                  * Starting at 25 coins, then dropping each 120 blocks
                  * (about 1 hour) until reaching 10 coins at last block.
                  */
-                nSubsidy =  25*COIN -  (15*COIN * (nHours-0))/(31*24);
-            } else if (nHours < 61*24) {
+                nSubsidy = rewards[2] - ((rewards[2]-rewards[3]) * (nHours-days[0]))/(days[1]-days[0]);
+            } else if (nHours < days[2]) {
                 /*
-                 * Blocks 167178 .. 253577 (should take about 30 days):
+                 * Blocks 167058 .. 253457 (should take about 30 days):
                  * Starting at about 10 coins, then dropping each 120 blocks
                  * (about 1 hour) until reaching 5 coins at the last block.
                  */
-                nSubsidy =  10*COIN -   (5*COIN * (nHours-31*24))/(30*24);
-            } else if (nHours < 183*24) {
+                nSubsidy = rewards[3] - ((rewards[3]-rewards[4]) * (nHours-days[1]))/(days[2]-days[1]);
+            } else if (nHours < days[3]) {
                 /*
-                 * Blocks 253578 .. 604937 (should take about 92 days):
+                 * Blocks 253458 .. 604817 (should take about 92 days):
                  * Starting at about 5 coins, then dropping each 120 blocks
                  * (bout 1 hour) until reaching 1.8 coins at the last block.
                  */
-                nSubsidy =   5*COIN - (320*CENT * (nHours-61*24))/(122*24);
-            } else if (nHours < (366*24-648+5*24)) { // 648 =~ 77777/(60*2)
+                nSubsidy = rewards[4] - ((rewards[4]-rewards[5]) * (nHours-days[2]))/(days[3]-days[2]);
+            } else if (nHours < days[4]) { // 648 =~ 77777/(60*2)
                 /*
-                 * Blocks 604938 .. 1049177
+                 * Blocks 604819 .. 1068497
                  * Starting at about 1.8 coins, then dropping each 120 blocks
-                 * (about 1 hour) until reaching 0.075 FZ at the end of 
-                 * 1 year after the launch of Frozen.
+                 * (about 1 hour) until reaching 0.075 FZ at the end of about
+                 * about 1 year after the launch of Frozen.
                  */
-                nSubsidy = 180*CENT - (180*CENT * (nHours-183*24))/(183*24-648+5*24);
-            } else if ( (nHours>=(366*24-648+5*24)) && (nHeight<=1913378) ) {
+                nSubsidy = rewards[5] - ((rewards[5]-rewards[6]) * (nHours-days[3]))/(days[4]-days[3]);
+            } else if ( (nHours>=days[4]) && (nHeight<=1691866) ) {
                 /*
-                 * Blocks 1049178 .. 1913378 yield 0.075 FZ per block
+                 * Blocks 1068498 .. 1691866 yield 0.075 FZ per block
                  */
-                nSubsidy = nBlockRewardMinimumCoin;
-            } else if (nHeight == 1913379) {
+                nSubsidy = rewards[6];
+            } else if (nHeight == 1691867) {
                 /*
-                 * Block 1913379 is the last block getting a subsidy. 
-                 * The reward of the block is 0.0788 FZ (0.0750 + 0.0038).
+                 * Block 1691867 is the last block getting a subsidy. 
+                 * The reward of the block is 0.1090 FZ
                  *
-                 * The last block with reward will be reached at about 665
+                 * The last block with reward will be reached at about 560
                  * days after launch of the coin. The rewards of all blocks
                  * sum up to a total of 7,777,777.00000 FZ
                  */
-                nSubsidy = 788 * (CENT/100);
+                nSubsidy = rewards[7];
             } else {
                 /*
-                 * From block 1913380 on there is no more subsidy. Miners will get
+                 * From block 1691868 on there is no more subsidy. Miners will get
                  * their reward exclusively from the transaction fees.
                  */
-                nSubsidy = 0;
+                nSubsidy = rewards[8];
             }
         }
         
@@ -1211,6 +1233,57 @@ int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
 int64 _GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
 {
     return GetBlockValue( nHeight, nFees, nBits );
+}
+
+int64 static GetTotalCoinSupply(int nHeight, bool noShortCuts)
+{
+    int64 totalSupply = 0;
+    int startBlock = 1;
+    if ( !noShortCuts ) {
+        /*
+         * Reduce the amount of calculations a bit. 
+         * Verified by test/getblockvalue_tests.cpp:GetCoinSupplyTotals
+         */
+        int heights[] = {
+            100000, 200000, 300000, 400000, 500000,
+            600000, 700000, 800000, 900000, 1000000,
+            1100000, 1200000, 1300000, 1400000, 1500000,
+            1600000, 1700000
+        };
+        int64 supplies[] = {
+            440411190151, 575124320349, 632427694135, 673640585154, 705746007720,
+            728743963583, 745071733417, 757672858413, 766553746032, 771714394976,
+            773338694100, 774088694100, 774838694100, 775588694100, 776338694100,
+            777088694100, 777777700000
+        };
+        if (nHeight>=1 ) {
+            int numHeights = (int)(sizeof(heights)/sizeof(heights[0]));
+            int numSupplies = (int)(sizeof(supplies)/sizeof(supplies[0]));
+            if (nHeight>heights[numHeights-1]) {
+                nHeight = heights[numHeights-1];
+            }
+            for (int i=(numHeights-1); i>=0; i--) {
+                if ( heights[i] <= nHeight ) {
+                    if (i>=0 && i<=numSupplies) { 
+                        totalSupply = supplies[i];
+                        startBlock = heights[i] + 1;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    if ( nHeight>=1 ) {
+        for (int i = startBlock; i <= nHeight; i++) {
+            totalSupply += GetBlockValue( i, 0, 0 );
+        }
+    }
+    return totalSupply;
+}
+
+int64 _GetTotalCoinSupply(int nHeight, bool noShortCuts)
+{
+    return GetTotalCoinSupply( nHeight, noShortCuts );
 }
 
 //

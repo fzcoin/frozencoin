@@ -86,6 +86,7 @@ Value getinfo(const Array& params, bool fHelp)
     if (pwalletMain->IsCrypted())
         obj.push_back(Pair("unlocked_until", (boost::int64_t)nWalletUnlockTime / 1000));
     obj.push_back(Pair("errors",        GetWarnings("statusbar")));
+    obj.push_back(Pair("coinsupply",    ValueFromAmount(_GetTotalCoinSupply(nBestHeight,false))));
     return obj;
 }
 
@@ -1600,3 +1601,22 @@ Value makekeypair(const Array& params, bool fHelp)
     result.push_back(Pair("PrivateKey", CBitcoinSecret(vchSecret, fCompressed).ToString()));
     return result;
 }
+
+Value getcoinsupply(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() > 1)
+        throw runtime_error(
+            "getcoinsupply [height]\n"
+            "Returns the total number of issued coins at the current block.\n"
+            "Pass in [height] to inform about the coin supply for a certain block.");
+
+    int height = nBestHeight;
+    if (params.size() > 0) {
+        height = (int) params[0].get_int();
+    }
+
+    int64 coinSupply =  _GetTotalCoinSupply(height,false);
+
+    return ValueFromAmount(coinSupply);
+}
+

@@ -1,6 +1,14 @@
 
 FROZEN
 
+v1.1.0.8
+- added rpc "getcoinsupply [blockheight]" and the entry coinsupply for th
+  rpc command "getinfo"
+- added tests for the total coin supply and found a bug for late blocks.
+  After fix: block 1,691,867 is the last last block allowing a reward, it
+  is scheduled to be mined about 560 days after block 1.
+- fixed the parametrized version of "getnetworkhashps"
+
 v1.1.0.7
 - smaller adjustments for OSX
 - fixed more localization issues
