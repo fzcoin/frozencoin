@@ -1194,15 +1194,6 @@ void MapPort(bool)
 static const char *strMainNetDNSSeed[][2] = {
     {"fzcoin.mooo.com", "fzcoin.mooo.com"},
     {"dnsseed.info.tm", "dnsseed.info.tm"},
-
-    // To be set up by Frozen@frozencoin.org:
-    {"dnsseed.frozencoin.org", "dnsseed.frozencoin.org"},
-
-    // Original entries of v1.0.0.0. They make only trouble right
-    // now, add them in a further release when they are set up correctly.
-    // {"frozen.no-ip.biz", "frozen.no-ip.biz"},
-    // {"frozen.mooo.com", "frozen.mooo.com"},
-
     {NULL, NULL}
 };
 
