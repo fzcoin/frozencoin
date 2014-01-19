@@ -1140,13 +1140,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees, unsigned int nBits)
              * After block 77777 the reward drops to 25 coins, and then
              * decreases steadily for about 1 year after the Frozen's
              * launch until it reaches the minimum block reward of 0.075 FZ
-             *
-             * Total coins issued until block 1051200: 7715504
-             *
-             * Inflation due to the minimum reward is then afterwards per year:
-             * 365*24*60*2 blocks * 0.075 FZ = 78840.0 FZ / year
-             * This makes a relative inflation of about 1.01% pa, measured
-             * against COIN_MAX of 7777777 FZ.
+             * After 7777777.0 coins are issued the reward drops to zero.
              */
 
             int64 days[] = {
