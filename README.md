@@ -18,7 +18,8 @@ Enjoy FZ! Spread the word!
 
 Resources:
 
-    o Official FZ forum:        http://frozencoin.org/forum/index.php
+    o New Official Site:        http://www.fzcoin.cc
+    o New Official FZ forum:    http://www.frozentalk.org/
     o Official Github sources:  https://github.com/fzcoin/frozencoin
     o Windows binaries:         https://github.com/fzcoin/frozencoin_binaries
 
