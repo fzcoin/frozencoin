@@ -21,5 +21,5 @@ Resources:
     o New Official Site:        http://www.fzcoin.cc
     o New Official FZ forum:    http://www.frozentalk.org/
     o Official Github sources:  https://github.com/fzcoin/frozencoin
-    o Windows binaries:         https://github.com/fzcoin/frozencoin_binaries
-
+    o Binariy distributions:    https://github.com/fzcoin/frozencoin_binaries
+    o Announcement-Thread:      https://bitcointalk.org/index.php?topic=411291.0
